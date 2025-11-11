@@ -110,3 +110,47 @@ graph TD
 
 ```
 Este diagrama representa la comunicación entre clientes, API Gateway y microservicios. Las líneas representan eventos y llamadas API, siguiendo CQRS y arquitectura basada en eventos.
+
+### Ventajas clave:
+
+**Desacoplamiento:** Cada microservicio se comunica a través de eventos y no depende directamente de otros servicios para continuar su proceso. Esto permite que cada servicio evolucione de manera independiente y se escale sin afectar a otros.
+
+**Escalabilidad y Resiliencia:** El uso de eventos y mensajería permite manejar picos de carga sin bloqueos, garantizando que el sistema sea resistente a fallos. En caso de que un servicio esté inactivo o sobrecargado, los eventos se almacenan y procesan cuando sea posible.
+
+**Asincronía y fiabilidad:** Los eventos se procesan de manera asíncrona, lo que permite que las operaciones se realicen de forma eficiente sin que el sistema se vea bloqueado por transacciones que dependan de respuestas inmediatas.
+
+
+De esta manera, los servicios se comunican entre sí a través de estos eventos para garantizar que todo el proceso de compra y pago sea fluido y sin bloqueos.
+
+#### Explicación de los Eventos
+
+1. **Pedidos → Inventario | `OrderCreated`**  
+   Cuando un cliente hace un pedido, el sistema de pedidos notifica al sistema de inventario para que se actualice el stock de los productos comprados. Así, el inventario se gestiona de manera automática y sin esperar a que el pedido se complete.
+
+2. **Pedidos → Pagos | `OrderCreated`**  
+   Cuando el pedido se crea, el sistema de pedidos informa al sistema de pagos para que se procese la transacción. Esto permite que el proceso de pago comience sin que el sistema de pedidos dependa directamente de él.
+
+3. **Pedidos → Notificaciones | `OrderCreated`**  
+   Cuando el pedido se registra, el sistema de pedidos envía una notificación al sistema de comunicaciones para que le envíe al cliente un correo o mensaje confirmando su compra. Esto mantiene al cliente informado de manera rápida y automática.
+
+4. **Pagos → Pedidos | `PaymentFailed / Success`**  
+   Después de procesar el pago, el sistema de pagos notifica al sistema de pedidos si el pago fue exitoso o falló. Si el pago fue correcto, el pedido se completa, y si no, se puede cancelar o ajustar el pedido.
+
+5. **Inventario → Pedidos | `StockCompensated`**  
+   Si el inventario se ve afectado por un error (como no tener suficientes productos), el sistema de inventario le avisa al sistema de pedidos para que se tomen medidas como cancelar el pedido o reembolsar al cliente.
+
+De esta manera, los servicios se comunican entre sí a través de estos eventos para garantizar que todo el proceso de compra y pago sea fluido y sin bloqueos.
+
+
+## Dagrama de Contexto general
+
+Este diagrama muestra la arquitectura de alto nivel del sistema y cómo los actores (como los usuarios) interactúan con los microservicios a través de la API Gateway, que sirve como punto de entrada a los diferentes microservicios de comercio electrónico.
+
+<img width="987" height="1062" alt="image" src="https://github.com/user-attachments/assets/80bc9c91-090a-4f62-8f4c-5355045bc914" />
+
+## Diagrama de Contenedores
+
+Este diagrama muestra los contenedores dentro del sistema. En este caso, cada microservicio se implementa como un contenedor dentro del sistema de comercio electrónico. La API Gateway orquesta las comunicaciones, y los brokers de mensajería permiten una comunicación asíncrona.
+
+
+
