@@ -19,4 +19,4 @@
    
 5) Diseña la arquitectura de una API RESTFul que permita a terceros integrar servicios a una plataforma financiera. La API debe implementar control de acceso, ser escalable y cumplir con estándares de seguridad financiera. Realiza el diagrama y explica las decisiones técnicas clave.
 
- IR A DIAGRAMA -> 
+    IR A DIAGRAMA -> 
