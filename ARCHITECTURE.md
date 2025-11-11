@@ -1,47 +1,77 @@
 
 https://structurizr.com/
 
-1) Se piensa desarrollar una solución para ofrecer créditos en línea la cual se espera pueda ser usada en diferentes países, para esto se debe hacer conexión con algunos servicios del core bancario y se debe dejar un registro detallado de cada una de las solicitudes que hagan los clientes. 
+# 1) Desarrollo de Solución de Créditos en Línea 
 
-Teniendo en cuenta la pregunta anterior plantee un diagrama de arquitectura que permita evidenciar los componentes, servicios, reglas, o consideraciones a tener en cuenta.
+## Planteamiento del Problema
+Se piensa desarrollar una solución para ofrecer créditos en línea, la cual se espera pueda ser usada en diferentes países. Para esto:
+
+- Se debe hacer conexión con algunos servicios del core bancario.
+- Se debe dejar un registro detallado de cada una de las solicitudes que hagan los clientes.
+
+Teniendo en cuenta lo anterior, se plantea la necesidad de un **diagrama de arquitectura** que permita evidenciar los componentes, servicios, reglas y consideraciones a tener en cuenta.
+
+## Propuesta de Solución
+Mi propuesta para dar cumplimiento a la solución planteada consiste en:
+
+- Desarrollar una **aplicación de créditos en línea basada en microservicios**, separando las responsabilidades de cada servicio para facilitar escalabilidad y mantenimiento.
+- Implementar **CQRS (Command Query Responsibility Segregation)**, separando:
+  - **Comandos (escrituras):** para crear nuevas solicitudes o cambiar estados.
+  - **Consultas (lecturas):** para visualizar el estado de las solicitudes y generar proyecciones específicas para auditoría, optimizando el rendimiento.
+- Registrar cada solicitud y acción relevante en **tablas de auditoría internas**, asegurando:
+  - Trazabilidad completa.
+  - Cumplimiento regulatorio.
+- Integrar con el **CORE bancario existente** mediante **APIs**, evitando modificaciones en el sistema central.
+- Utilizar un **API Gateway** para centralizar:
+  - Autenticación.
+  - Enrutamiento.
+  - Comunicación entre microservicios, garantizando una arquitectura modular y flexible.
 
 
-R) mi propuesta para dar cumplimiento de solución propuesta consiste en desarrollar una aplicación de créditos en línea basada en microservicios, separando las responsabilidades de cada servicio para facilitar escalabilidad y mantenimiento. Se implementa CQRS, separando comandos (escrituras) de consultas (lecturas), optimizando el rendimiento y permitiendo proyecciones específicas para auditoría. Cada solicitud y acción relevante se registra en tablas de auditoría internas, asegurando trazabilidad completa y cumplimiento regulatorio. La integración con el CORE bancario existente se realiza mediante APIs, evitando modificaciones en el sistema central. Finalmente, se utiliza un API Gateway para centralizar autenticación, enrutamiento y comunicación entre los microservicios, garantizando una arquitectura modular y flexible. 
+## Justificación de la Propuesta de Implementación
 
+ **Arquitectura basada en microservicios**
+Cada función de la aplicación (solicitud de crédito, validación de documentos, notificación al cliente, auditoría) se implementa como un microservicio independiente, lo que facilita:
 
-
-
-Justificación de la propuesta de implementación
-
-Arquitectura basada en microservicios
-
-Cada función de la aplicación (solicitud de crédito, validación de documentos, notificación al cliente, auditoría) se implementa como un microservicio independiente, lo que facilita la escalabilidad, despliegue incremental y la adaptación a diferentes países con reglas locales específicas.
+- Escalabilidad.
+- Despliegue incremental.
+- Adaptación a diferentes países con reglas locales específicas.
 
 Esto permite minimizar cambios en el core bancario existente, limitando la integración a interfaces de servicios y APIs.
 
-Uso de CQRS (Command Query Responsibility Segregation)
+## Uso de CQRS (Command Query Responsibility Segregation)
+Se separa el modelo de escritura (commands) del modelo de lectura (queries) para manejar de manera eficiente:
 
-Separar el modelo de escritura (commands) del modelo de lectura (queries) para manejar de manera eficiente las solicitudes de crédito y los reportes de auditoría.
+- **Escrituras:** Nuevas solicitudes, cambios de estado, realizadas en un servicio de dominio.
+- **Consultas:** Visualización de estado de solicitud y reportes de auditoría, realizadas sobre proyecciones optimizadas para lectura.
 
-Las escrituras (nuevas solicitudes, cambios de estado) se realizan en un servicio de dominio, mientras que las consultas (visualización de estado de solicitud, reportes de auditoría) se realizan sobre proyecciones optimizadas para lectura.
+## Auditoría interna
+Cada solicitud y acción relevante se registra en tablas de auditoría internas, desacopladas de los microservicios de negocio. Esto garantiza:
 
-Auditoría interna
+- Trazabilidad completa.
+- Reportes regulatorios sin impactar la lógica del core bancario.
 
-Cada solicitud y acción relevante se registra en tablas de auditoría internas, de manera desacoplada de los microservicios de negocio.
+## Integración con el core bancario existente
+La comunicación se realiza mediante APIs o servicios de integración, evitando cambios directos en el core. Los microservicios pueden:
 
-Esto asegura trazabilidad completa y facilita reportes regulatorios sin impactar la lógica del core bancario.
+- Orquestar llamadas a estos servicios.
+- Enriquecer la información con reglas locales de cada país.
 
-Integración con el core bancario existente
+## Escalabilidad y resiliencia
+Se utilizan colas de mensajes para desacoplar servicios y garantizar resiliencia frente a picos de solicitudes. Además:
 
-La comunicación se hace mediante APIs o servicios de integración, evitando cambios en el core.
+- Los microservicios independientes permiten escalar solo los módulos críticos sin afectar todo el sistema.
 
-Los microservicios pueden orquestar llamadas a estos servicios y enriquecer la información con reglas locales de cada país.
 
-Escalabilidad y resiliencia
+## Componentes y Consideraciones Clave
 
-Uso de colas de mensajes para desacoplar servicios y garantizar resiliencia frente a picos de solicitudes.
+- **API Gateway:** Centraliza autenticación, autorización, enrutamiento y control de tráfico.
+- **Microservicios:** Cada módulo (solicitud, validación, notificación) es independiente, facilitando escalabilidad y mantenimiento.
+- **CQRS:** Separación de comandos y consultas para optimizar rendimiento y auditoría.
+- **Auditoría Interna:** Registro detallado de cada solicitud y acción relevante, garantizando trazabilidad.
+- **Integración con Core Bancario:** Solo mediante APIs, sin cambios en el sistema central.
+- **Escalabilidad y Resiliencia:** Uso de colas de mensajes (no representadas en el diagrama) para desacoplar servicios y soportar picos de carga.
 
-Microservicios independientes permiten escalar solo los módulos críticos sin afectar todo el sistema.
 
 
 
