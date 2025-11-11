@@ -45,7 +45,7 @@ Se propone realizar una migración **“desplezar y levantar servicios”**, tra
 
 ## 4. Arquitectura Conceptual
 
-# Arquitectura de Migración del Monolito a la Nube
+# Arquitectura a alto nivel de Migración del Monolito a la Nube
 
 <img width="1760" height="863" alt="image" src="https://github.com/user-attachments/assets/32b8b800-430c-401a-8086-6457379916e1" />
 
