@@ -7,16 +7,24 @@
 
 2) El Banco está planeando migrar un aplicación monolítica a la nube pública. El sistema actual está alojado on-premise y soporta grandes volúmenes de datos y conexiones concurrentes. Proporciona una propuesta arquitectónica para migrar este sistema, asegurando alta disponibilidad, recuperación ante desastres y eficiencia en costos.
 
-    IR A DIAGRAMA -> 
+    IR A DIAGRAMA -> https://github.com/jhoney787813/proceso-arquitecto-agil-banco-davivienda/blob/main/Solution2.md
+
+
 
 3) Diseña la arquitectura de un sistema de microservicios para una aplicación de comercio electrónico que debe manejar altos volúmenes de transacciones, implementar escalabilidad dinámica y tolerancia a fallos. Utiliza un esquema que considere tanto la comunicación entre servicios como la seguridad.
 
-    IR A DIAGRAMA ->
+    IR A DIAGRAMA ->https://github.com/jhoney787813/proceso-arquitecto-agil-banco-davivienda/blob/main/Solution3.md
+
+
    
 4) Explique cómo garantizas el análisis de la calidad de código en las aplicaciones de una organización que cuenta con cientos de repositorios desarrollados en diferentes lenguajes y con diferentes frameworks
 
-    IR A DIAGRAMA ->
+    IR A DIAGRAMA -> https://github.com/jhoney787813/proceso-arquitecto-agil-banco-davivienda/blob/main/Solution4.md
+
+
    
 5) Diseña la arquitectura de una API RESTFul que permita a terceros integrar servicios a una plataforma financiera. La API debe implementar control de acceso, ser escalable y cumplir con estándares de seguridad financiera. Realiza el diagrama y explica las decisiones técnicas clave.
 
-    IR A DIAGRAMA -> 
+    IR A DIAGRAMA -> https://github.com/jhoney787813/proceso-arquitecto-agil-banco-davivienda/blob/main/Solution5.md
+
+
