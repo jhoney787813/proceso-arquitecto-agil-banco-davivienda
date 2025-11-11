@@ -79,9 +79,22 @@ Dagrama de Contexto general
 
 <img width="1872" height="572" alt="image" src="https://github.com/user-attachments/assets/388eda34-d5ef-4fab-801f-61684ef35b39" />
 
+Diagrama de contenedores
+
+<img width="1786" height="1057" alt="image" src="https://github.com/user-attachments/assets/954dfae2-17f9-46bf-ba40-7469cf03c4a7" />
 
 
+Diagrama de componentes
 
+<img width="1342" height="1056" alt="image" src="https://github.com/user-attachments/assets/30bad884-936d-4d0a-8f9b-4d9227e55634" />
+Componete Commands:
+<img width="1870" height="932" alt="image" src="https://github.com/user-attachments/assets/e73f1a98-7bc8-4f8d-b41c-ed852762ab32" />
+
+Componete Querys:
+<img width="1802" height="950" alt="image" src="https://github.com/user-attachments/assets/a2fb24f5-e34b-4b99-a56b-fbe44a2558e6" />
+
+
+Componete Querys:
 
 2) El Banco está planeando migrar un aplicación monolítica a la nube pública. El sistema actual está alojado on-premise y soporta grandes volúmenes de datos y conexiones concurrentes. Proporciona una propuesta arquitectónica para migrar este sistema, asegurando alta disponibilidad, recuperación ante desastres y eficiencia en costos.
 
