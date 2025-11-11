@@ -11,7 +11,7 @@ Mi propuesta para dar cumplimiento a la solución planteada consiste en:
 
 ## 1. Enfoque de Migración
 
-Se propone realizar una **migración “lift-and-shift”**, trasladando el monolito completo a la nube tal como está. Esto implica:
+Se propone realizar una migración **“desplezar y levantar servicios”**, trasladando el monolito completo a la nube tal como está. Esto implica:
 
 - Mantener la aplicación existente sin modificar su estructura interna.
 - Ejecutarla en servidores en la nube, utilizando recursos escalables según demanda.
@@ -26,14 +26,17 @@ Se propone realizar una **migración “lift-and-shift”**, trasladando el mono
 - Usar un **balanceador de carga** que distribuya el tráfico y asegure continuidad ante fallas de algún servidor.
 
 ### Recuperación ante Desastres
+
 - Mantener una **copia espejo** de la aplicación y la base de datos en otra región de la nube.
 - Permitir activación rápida de la copia espejo en caso de fallo total de la región principal.
 
 ### Persistencia de Datos
+
 - Implementar **bases de datos replicadas** y respaldos automáticos.
 - Garantizar que los datos estén siempre disponibles y consistentes, incluso en situaciones críticas.
 
 ### Eficiencia en Costos
+
 - No se requiere reconstrucción del sistema, reduciendo gastos de desarrollo.
 - Pagar solo por los recursos utilizados en la nube y ajustar capacidad según la demanda.
 - La réplica para recuperación ante desastres tiene un costo adicional, pero evita pérdidas mucho mayores en caso de fallo.
@@ -41,4 +44,25 @@ Se propone realizar una **migración “lift-and-shift”**, trasladando el mono
 ---
 
 ## 4. Arquitectura Conceptual
+
+
+**Explicación:**
+- Los usuarios acceden a la aplicación a través de un balanceador que distribuye la carga entre varias instancias.
+- La base de datos está replicada para asegurar disponibilidad y consistencia de datos.
+- Existe una copia espejo en otra región de la nube para garantizar continuidad del negocio ante desastres.
+
+---
+
+## 5. Beneficios de la Propuesta
+
+1. **Rápida implementación:** La aplicación se traslada tal como está, sin necesidad de rediseño.
+2. **Alta disponibilidad:** Las instancias múltiples y el balanceo de carga aseguran que el sistema permanezca operativo.
+3. **Recuperación ante desastres:** La copia espejo protege frente a fallas graves.
+4. **Optimización de costos:** Pago por uso de recursos y capacidad escalable según demanda, evitando inversiones innecesarias.
+5. **Bajo riesgo:** Se minimiza el impacto de migración al mantener el funcionamiento actual de la aplicación.
+
+---
+
+ 
+Considero a alto nivel que esta estrategia permite al Banco aprovechar los beneficios de la nube (escalabilidad, resiliencia y costos controlados) sin alterar el sistema existente, garantizando continuidad del negocio y preparación para futuras mejoras. **"TIEMPOS MENORES DE IMPLEMENTACIÓN"**, a comparación si los desarrollaramos como Microservicios o capacidades independientes.
 
