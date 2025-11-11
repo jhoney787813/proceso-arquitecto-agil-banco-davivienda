@@ -49,12 +49,23 @@ Se propone realizar una migración **“desplezar y levantar servicios”**, tra
 
 <img width="1760" height="863" alt="image" src="https://github.com/user-attachments/assets/32b8b800-430c-401a-8086-6457379916e1" />
 
-
-
 **Explicación:**
 - Los usuarios acceden a la aplicación a través de un balanceador que distribuye la carga entre varias instancias.
 - La base de datos está replicada para asegurar disponibilidad y consistencia de datos.
 - Existe una copia espejo en otra región de la nube para garantizar continuidad del negocio ante desastres.
+
+**Componentes**
+1. **Cliente / Usuario**: usuario final que solicita operaciones bancarias.  
+2. **Balanceador de carga**: distribuye las solicitudes entre Servidor 1 y Servidor 2.  
+3. **Servidores de aplicación (Monolito)**: mantienen la aplicación existente sin necesidad de reescribirla.  
+4. **Módulos internos**:  
+   - **Negocio**: lógica central de reglas de negocio bancaria  1 a N.
+5. **Base de datos replicada**: asegura alta disponibilidad y consistencia de los datos.  
+6. **Región de respaldo**: copia espejo para recuperación ante desastres.  
+
+
+
+
 
 ---
 
