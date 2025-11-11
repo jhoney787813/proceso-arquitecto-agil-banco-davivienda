@@ -94,7 +94,6 @@ Componete Querys:
 <img width="1802" height="950" alt="image" src="https://github.com/user-attachments/assets/a2fb24f5-e34b-4b99-a56b-fbe44a2558e6" />
 
 
-Componete Querys:
 
 2) El Banco está planeando migrar un aplicación monolítica a la nube pública. El sistema actual está alojado on-premise y soporta grandes volúmenes de datos y conexiones concurrentes. Proporciona una propuesta arquitectónica para migrar este sistema, asegurando alta disponibilidad, recuperación ante desastres y eficiencia en costos.
 
