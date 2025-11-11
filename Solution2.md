@@ -45,6 +45,11 @@ Se propone realizar una migración **“desplezar y levantar servicios”**, tra
 
 ## 4. Arquitectura Conceptual
 
+# Arquitectura de Migración del Monolito a la Nube
+
+<img width="1760" height="863" alt="image" src="https://github.com/user-attachments/assets/32b8b800-430c-401a-8086-6457379916e1" />
+
+
 
 **Explicación:**
 - Los usuarios acceden a la aplicación a través de un balanceador que distribuye la carga entre varias instancias.
