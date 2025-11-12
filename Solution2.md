@@ -82,3 +82,4 @@ Se propone realizar una migración **“desplezar y levantar servicios”**, tra
  
 Considero a alto nivel que esta estrategia permite al Banco aprovechar los beneficios de la nube (escalabilidad, resiliencia y costos controlados) sin alterar el sistema existente, garantizando continuidad del negocio y preparación para futuras mejoras. **"TIEMPOS MENORES DE IMPLEMENTACIÓN"**, a comparación si los desarrollaramos como Microservicios o capacidades independientes.
 
+[Ver Definiciones Arquitecturas](https://github.com/jhoney787813/proceso-arquitecto-agil-banco-davivienda/blob/main/ARCHITECTURE.md)
