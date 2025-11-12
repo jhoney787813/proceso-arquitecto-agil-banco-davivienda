@@ -40,3 +40,6 @@ He utilizado SonarQube en varios proyectos y, aunque al principio me encontré c
 <img width="841" height="798" alt="image" src="https://github.com/user-attachments/assets/6f8e0995-ce9c-4c9b-a815-6e35a4346b64" />
 
 
+[Ver Definiciones Arquitecturas](https://github.com/jhoney787813/proceso-arquitecto-agil-banco-davivienda/blob/main/ARCHITECTURE.md)
+
+
