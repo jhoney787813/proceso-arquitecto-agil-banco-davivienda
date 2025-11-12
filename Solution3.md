@@ -160,5 +160,5 @@ Este diagrama muestra los contenedores dentro del sistema. En este caso, cada mi
 
 <img width="966" height="988" alt="image" src="https://github.com/user-attachments/assets/216395a9-f8b5-40ad-8e9e-6f7fa026d560" />
 
-
+[Ver Definiciones Arquitecturas](https://github.com/jhoney787813/proceso-arquitecto-agil-banco-davivienda/blob/main/ARCHITECTURE.md)
 
