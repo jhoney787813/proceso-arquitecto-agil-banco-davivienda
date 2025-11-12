@@ -89,3 +89,6 @@ Componete Commands:
 
 Componete Querys:
 <img width="1802" height="950" alt="image" src="https://github.com/user-attachments/assets/a2fb24f5-e34b-4b99-a56b-fbe44a2558e6" />
+
+
+[Ver Definiciones Arquitecturas](https://github.com/jhoney787813/proceso-arquitecto-agil-banco-davivienda/blob/main/ARCHITECTURE.md)
