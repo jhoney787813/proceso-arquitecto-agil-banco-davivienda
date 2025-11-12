@@ -285,4 +285,4 @@ Los acuerdos de desarrollo aseguran que todos los equipos mantengan coherencia y
 
 "La combinación de estos atributos de calidad y acuerdos de desarrollo garantiza que la API RESTful financiera sea segura, escalable, mantenible y confiable, cumpliendo con los estándares de la industria y facilitando la integración de terceros de manera controlada y eficiente."
 
-
+[Ver Definiciones Arquitecturas](https://github.com/jhoney787813/proceso-arquitecto-agil-banco-davivienda/blob/main/ARCHITECTURE.md)
