@@ -152,4 +152,13 @@ Este diagrama muestra la arquitectura de alto nivel del sistema y cómo los acto
 
 Este diagrama muestra los contenedores dentro del sistema. En este caso, cada microservicio se implementa como un contenedor dentro del sistema de comercio electrónico. La API Gateway orquesta las comunicaciones, y los brokers de mensajería permiten una comunicación asíncrona.
 
+<img width="1984" height="146" alt="image" src="https://github.com/user-attachments/assets/af4e23a9-74d3-430b-b54b-d014a435138c" />
+
+
+## Diagrama de Componentes
+
+
+<img width="966" height="988" alt="image" src="https://github.com/user-attachments/assets/216395a9-f8b5-40ad-8e9e-6f7fa026d560" />
+
+
 
