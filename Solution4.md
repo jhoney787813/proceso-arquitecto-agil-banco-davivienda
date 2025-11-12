@@ -36,3 +36,7 @@ SonarQube es ideal para manejar grandes volúmenes de código y múltiples repos
 ## Apreciaciones Personales
 
 He utilizado SonarQube en varios proyectos y, aunque al principio me encontré con algunos inconvenientes relacionados con los costos de la licencia para grandes equipos, la verdad es que la herramienta sigue siendo altamente recomendable. Ofrece una solución escalable y automatizada que permite realizar un análisis continuo de la calidad del código en todos los proyectos. Además, su integración es sencilla y aporta mucho valor en términos de mantenibilidad, seguridad y eficiencia del código. A pesar de los costos, creo que los beneficios superan con creces la inversión, especialmente en equipos grandes o proyectos a largo plazo.
+
+<img width="841" height="798" alt="image" src="https://github.com/user-attachments/assets/6f8e0995-ce9c-4c9b-a815-6e35a4346b64" />
+
+
